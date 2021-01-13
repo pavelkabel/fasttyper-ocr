@@ -22,7 +22,7 @@ else:
 
 
 def fastKeyboard(string):
-    #aptimize text recieved by tesseract
+    #optimize text recieved by tesseract
     stringSpaced = string.ljust(len(string) + 1)
     if string.count(' ') <= 3:
         stringProcessed = " ".join(string.replace(" ",""))
@@ -50,7 +50,8 @@ def imgToString():
     while(True): 
         #configure screen area
         cap = ImageGrab.grab(bbox =(0, 220, 1650, 285)) 
-        tesstr = pytesseract.image_to_string(cap, lang ='ces') 
+        #here you can configure language
+        tesstr = pytesseract.image_to_string(cap, lang ='eng') 
         print(tesstr.rsplit("\n",1)[0])
         fastKeyboard(tesstr.rsplit("\n",1)[0])
         time.sleep(0.5)
@@ -61,7 +62,8 @@ def imgToString2():
     while(True): 
         #configure screen area
         cap = ImageGrab.grab(bbox =(0, 220, 1650, 285)) 
-        tesstr = pytesseract.image_to_string(cap, lang ='ces') 
+         #here you can configure language
+        tesstr = pytesseract.image_to_string(cap, lang ='eng') 
         print(tesstr.rsplit("\n",1)[0])
         fastKeyboard(tesstr.rsplit("\n",1)[0])
         time.sleep(0.5)
@@ -88,7 +90,8 @@ def checkNextLine():
     while(True): 
         #configure screen area of next line
         cap2 = ImageGrab.grab(bbox =(16, 294, 1628, 366)) 
-        nextLine = pytesseract.image_to_string(cap2, lang ='ces') 
+        #here you can configure language
+        nextLine = pytesseract.image_to_string(cap2, lang ='eng') 
         print(nextLine)
         print(len(nextLine))
 
